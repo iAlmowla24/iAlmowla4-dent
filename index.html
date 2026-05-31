@@ -73,7 +73,26 @@
     .brand{display:flex;align-items:center;gap:.6rem;cursor:pointer;background:none;border:none;font:inherit;}
     .brand .logo{width:40px;height:40px;flex:0 0 auto;}
     .brand .name{font-size:1.4rem;font-weight:800;color:#eaf0ff;letter-spacing:-.02em;}
+    .nav-right{display:flex;align-items:center;gap:.4rem;position:relative;}
     .nav .links{display:flex;align-items:center;gap:.4rem;}
+    .nav-toggle{display:none;width:44px;height:44px;border:none;border-radius:13px;cursor:pointer;
+      align-items:center;justify-content:center;font-size:1.45rem;line-height:1;
+      background:rgba(255,255,255,.13);color:#fff;transition:background .15s ease,transform .12s ease;}
+    .nav-toggle:hover{background:rgba(255,255,255,.22);}
+    .nav-toggle:active{transform:scale(.9);}
+    @media (max-width:720px){
+      .nav-toggle{display:flex;}
+      .nav .links{position:absolute;top:calc(100% + 10px);right:0;flex-direction:column;align-items:stretch;
+        gap:.45rem;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:.7rem;
+        min-width:214px;box-shadow:0 18px 44px rgba(0,0,0,.32);display:none;z-index:70;}
+      .nav .links.open{display:flex;animation:catFade .2s ease;}
+      .nav .links button[data-i18n]{width:100%;text-align:start;color:var(--ink);padding:.7rem .9rem;font-size:1rem;}
+      .nav .links button[data-i18n]:hover{background:var(--soft);color:var(--blue);}
+      .nav .links .lang-toggle{width:100%;justify-content:center;background:var(--soft);color:var(--ink);border-color:var(--border);}
+      .nav .links .install-btn{width:100%;justify-content:center;}
+      .nav .links .theme-toggle,.nav .links .accent-wrap{align-self:flex-start;}
+      [dir="rtl"] .nav .links{right:auto;left:0;}
+    }
     .nav .links button{
       background:none;border:none;font:inherit;font-size:1.02rem;font-weight:600;
       color:#dfe6ff;cursor:pointer;padding:.5rem .9rem;border-radius:12px;
@@ -373,7 +392,9 @@
       </svg>
       <span class="name">UO AL-KAFEEL COD</span>
     </button>
-    <div class="links">
+    <div class="nav-right">
+      <button class="nav-toggle" id="navToggle" onclick="toggleNav(event)" title="Menu" aria-label="Menu">☰</button>
+      <div class="links" id="navLinks">
       <button class="theme-toggle" id="themeBtn" onclick="cycleTheme()" title="Switch theme" aria-label="Switch theme"><span class="theme-emoji" id="themeEmoji">☀️</span></button>
       <div class="accent-wrap">
         <button class="accent-toggle" id="accentBtn" onclick="toggleAccentMenu(event)" title="Page color" aria-label="Page color"><span>🎨</span></button>
@@ -389,6 +410,7 @@
       <button class="install-btn" id="installBtn" onclick="installApp()" data-i18n="nav_install" style="display:none">⬇ Install</button>
       <button onclick="goHome()" data-i18n="nav_home">Home</button>
       <button onclick="openAbout()" data-i18n="nav_about">About</button>
+      </div>
     </div>
   </nav>
 
@@ -564,6 +586,18 @@
       setAccent(a);
     })();
 
+    /* ---------- Mobile menu (hamburger) ---------- */
+    function toggleNav(e){
+      if(e)e.stopPropagation();
+      const open=document.getElementById("navLinks").classList.toggle("open");
+      document.getElementById("navToggle").textContent=open?"✕":"☰";
+    }
+    function closeNav(){
+      document.getElementById("navLinks").classList.remove("open");
+      document.getElementById("navToggle").textContent="☰";
+    }
+    document.addEventListener("click",e=>{if(!e.target.closest(".nav-right"))closeNav();});
+
     /* =========================================================
        EDIT YOUR SOCIAL MEDIA LINKS HERE
        Put your full URL between the quotes. Leave "" to hide one.
@@ -615,7 +649,7 @@
         return '<a href="'+link+'" target="_blank" rel="noopener" title="'+LABELS[k]+'" aria-label="'+LABELS[k]+'">'+ICONS[k]+'</a>';
       }).join("");
     }
-    function openAbout(){showOverlay("aboutOverlay");}
+    function openAbout(){closeNav();showOverlay("aboutOverlay");}
     function closeAbout(){hideOverlay("aboutOverlay");}
     document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeAbout();closeYear();}});
 
@@ -737,7 +771,7 @@
     }
 
     function goHome(){
-      closeYear();closeAbout();
+      closeYear();closeAbout();closeNav();
       document.getElementById("subjectView").style.display="none";
       document.getElementById("homeView").style.display="block";
       window.scrollTo({top:0});
