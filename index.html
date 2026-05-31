@@ -46,21 +46,21 @@
 
     /* ---------- Navbar ---------- */
     .nav{
-      position:sticky;top:0;z-index:50;background:var(--surface);
-      border-bottom:1px solid var(--border);transition:background .35s ease;
+      position:sticky;top:0;z-index:50;background:#16224d;
+      border-bottom:1px solid rgba(255,255,255,.08);
       display:flex;align-items:center;justify-content:space-between;
       padding:.7rem 1.5rem;
     }
     .brand{display:flex;align-items:center;gap:.6rem;cursor:pointer;background:none;border:none;font:inherit;}
     .brand .logo{width:40px;height:40px;flex:0 0 auto;}
-    .brand .name{font-size:1.4rem;font-weight:800;color:var(--ink);letter-spacing:-.02em;}
+    .brand .name{font-size:1.4rem;font-weight:800;color:#eaf0ff;letter-spacing:-.02em;}
     .nav .links{display:flex;align-items:center;gap:.4rem;}
     .nav .links button{
       background:none;border:none;font:inherit;font-size:1.02rem;font-weight:600;
-      color:var(--ink);cursor:pointer;padding:.5rem .9rem;border-radius:8px;
+      color:#dfe6ff;cursor:pointer;padding:.5rem .9rem;border-radius:8px;
       transition:background .2s ease,color .2s ease,transform .12s ease;
     }
-    .nav .links button:hover{background:var(--soft);color:var(--blue);}
+    .nav .links button:hover{background:rgba(255,255,255,.12);color:#fff;}
     .nav .links button:active{transform:scale(.92);}
     /* animated theme switch button */
     .theme-toggle{
@@ -76,10 +76,10 @@
     .theme-emoji.spin{transform:rotate(360deg) scale(1.25);}
     @keyframes themeShimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
     /* language switch */
-    .lang-toggle{border:1.5px solid var(--border);background:var(--surface);color:var(--ink);font:inherit;font-weight:800;
+    .lang-toggle{border:1.5px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;font:inherit;font-weight:800;
       cursor:pointer;border-radius:999px;padding:.45rem .85rem;display:flex;align-items:center;gap:.3rem;
       transition:background .18s ease,color .18s ease,border-color .18s ease,transform .12s ease;}
-    .lang-toggle:hover{border-color:var(--blue);color:var(--blue);background:var(--soft);}
+    .lang-toggle:hover{border-color:rgba(255,255,255,.5);color:#fff;background:rgba(255,255,255,.2);}
     .lang-toggle:active{transform:scale(.92);}
     /* install app button */
     .install-btn{border:none;cursor:pointer;font:inherit;font-weight:800;color:#fff;border-radius:999px;
