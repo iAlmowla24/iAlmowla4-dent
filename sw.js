@@ -1,7 +1,7 @@
 // Service worker for the COD Lectures app.
 // Caches the app shell so it opens instantly and works offline (except PDFs,
 // which are large and always fetched fresh from the network).
-const CACHE = "cod-app-v1";
+const CACHE = "cod-app-v2";
 const CORE = [
   "./",
   "./index.html",
@@ -9,6 +9,7 @@ const CORE = [
   "./lectures.json",
   "./assets/icon-192.png",
   "./assets/icon-512.png",
+  "./assets/brand-logo.png",
   "./assets/college.jpg"
 ];
 
