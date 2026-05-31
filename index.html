@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UO AL-KAFEEL COD — Lectures</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>" />
+  <!-- PWA / installable app -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#2f49d1" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="COD Lectures" />
+  <link rel="apple-touch-icon" href="assets/icon-180.png" />
   <style>
     :root{
       --navy:#1b2559;
@@ -73,6 +81,12 @@
       transition:background .18s ease,color .18s ease,border-color .18s ease,transform .12s ease;}
     .lang-toggle:hover{border-color:var(--blue);color:var(--blue);background:var(--soft);}
     .lang-toggle:active{transform:scale(.92);}
+    /* install app button */
+    .install-btn{border:none;cursor:pointer;font:inherit;font-weight:800;color:#fff;border-radius:999px;
+      padding:.5rem 1rem;background:linear-gradient(135deg,#4f7ae6,#2f49d1);box-shadow:0 4px 14px rgba(47,73,209,.4);
+      transition:transform .12s ease,box-shadow .2s ease;}
+    .install-btn:hover{box-shadow:0 6px 18px rgba(47,73,209,.55);transform:translateY(-1px);}
+    .install-btn:active{transform:scale(.93);}
     /* RTL tweaks for Arabic */
     [dir="rtl"] .subj-link:hover{transform:translateX(-4px);}
     [dir="rtl"] .ym-deco{right:auto;left:-6px;}
@@ -302,6 +316,7 @@
     <div class="links">
       <button class="theme-toggle" id="themeBtn" onclick="cycleTheme()" title="Switch theme" aria-label="Switch theme"><span class="theme-emoji" id="themeEmoji">☀️</span></button>
       <button class="lang-toggle" id="langBtn" onclick="toggleLang()" title="Change language" aria-label="Change language"><span id="langText">🌐 ع</span></button>
+      <button class="install-btn" id="installBtn" onclick="installApp()" data-i18n="nav_install" style="display:none">⬇ Install</button>
       <button onclick="goHome()" data-i18n="nav_home">Home</button>
       <button onclick="openAbout()" data-i18n="nav_about">About</button>
     </div>
@@ -404,6 +419,7 @@
     const DICT={
       nav_home:{en:"Home",ar:"الرئيسية"},
       nav_about:{en:"About",ar:"حول"},
+      nav_install:{en:"⬇ Install",ar:"⬇ تثبيت"},
       hero_title:{en:"Your Dental Lecture Library",ar:"مكتبة محاضرات كلية طب الأسنان"},
       hero_sub:{
         en:"A central place for all your dental course material. Lectures are organised by study year — First through Fifth — and grouped into Lecture and Labs. Open any year, choose a subject, then <strong>view or download the PDF slides</strong> on any device.",
@@ -632,6 +648,28 @@
       const lh=e.target.closest(".lhead");
       if(lh)lh.parentElement.classList.toggle("open");
     });
+
+    /* ---------- Install app (PWA) ---------- */
+    let deferredPrompt=null;
+    window.addEventListener("beforeinstallprompt",e=>{
+      e.preventDefault();
+      deferredPrompt=e;
+      document.getElementById("installBtn").style.display="";
+    });
+    function installApp(){
+      if(!deferredPrompt)return;
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.finally(()=>{
+        deferredPrompt=null;
+        document.getElementById("installBtn").style.display="none";
+      });
+    }
+    window.addEventListener("appinstalled",()=>{document.getElementById("installBtn").style.display="none";});
+
+    /* register the service worker (offline app shell) */
+    if("serviceWorker" in navigator){
+      window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+    }
 
     buildSocials();
     fetch("lectures.json",{cache:"no-store"})
