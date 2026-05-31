@@ -72,7 +72,7 @@
     }
     .brand{display:flex;align-items:center;gap:.6rem;cursor:pointer;background:none;border:none;font:inherit;}
     .brand .logo{height:46px;width:auto;flex:0 0 auto;}
-    .brand .name{font-size:1.4rem;font-weight:800;color:#eaf0ff;letter-spacing:-.02em;}
+    .brand .name{font-size:1.12rem;font-weight:800;color:#eaf0ff;letter-spacing:-.01em;line-height:1.12;text-align:start;}
     .nav-right{display:flex;align-items:center;gap:.4rem;position:relative;}
     .nav .links{display:flex;align-items:center;gap:.4rem;}
     .nav-toggle{display:none;width:44px;height:44px;border:none;border-radius:13px;cursor:pointer;
@@ -362,14 +362,14 @@
       .nav .links{gap:.3rem;}
       .nav .links button{padding:.45rem .55rem;font-size:.92rem;}
       .brand{min-width:0;}
-      .brand .name{font-size:1.05rem;white-space:nowrap;}
+      .brand .name{font-size:.92rem;white-space:normal;line-height:1.1;}
       .brand .logo{height:40px;width:auto;}
       .theme-toggle{width:40px;height:40px;font-size:1.15rem;}
       .lang-toggle{padding:.4rem .6rem;}
     }
     @media (max-width:440px){
       .nav{padding:.5rem .55rem;}
-      .brand .name{font-size:.92rem;}
+      .brand .name{font-size:.8rem;}
       .brand .logo{height:36px;width:auto;}
       .nav .links{gap:.2rem;}
       .nav .links button{padding:.38rem .42rem;font-size:.82rem;}
@@ -384,7 +384,7 @@
   <nav class="nav">
     <button class="brand" onclick="goHome()" aria-label="Home">
       <img class="logo" src="assets/brand-logo.png" alt="UO AL-KAFEEL COD logo" />
-      <span class="name">UO AL-KAFEEL COD</span>
+      <span class="name">University Of Al-Kafeel College Of Dentistry</span>
     </button>
     <div class="nav-right">
       <button class="nav-toggle" id="navToggle" onclick="toggleNav(event)" title="Menu" aria-label="Menu">☰</button>
