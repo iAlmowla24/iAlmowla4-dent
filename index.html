@@ -7,7 +7,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>" />
   <!-- PWA / installable app -->
   <link rel="manifest" href="manifest.webmanifest" />
-  <meta name="theme-color" content="#2f49d1" />
+  <meta name="theme-color" content="#16224d" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -16,7 +16,7 @@
   <style>
     :root{
       --navy:#1b2559;
-      --blue:#2f49d1;
+      --blue:var(--acc);
       --blue-light:#3f6ad8;
       --ink:#1b2559;
       --text:#2b3242;
@@ -39,6 +39,16 @@
       --bg:#202329;--surface:#2b2f38;--soft:#363b45;--border:#3b404b;
       --shadow:0 12px 30px rgba(0,0,0,.45);
     }
+    /* ===== Accent color presets (changes the page's main color) ===== */
+    :root{
+      --acc:#2f49d1;--acc-lt:#4f7ae6;--acc-3:#6f53e6;--acc-mid:#2c3b91;--acc-deep:#1b2559;
+      --acc-dark:#2538b8;--bar-lt:#2b3c72;--bar-md:#18254f;--bar-dk:#0f1a3c;
+      --blue:var(--acc);--blue-light:var(--acc-lt);
+    }
+    [data-accent="pink"]{--acc:#d61f8f;--acc-lt:#ff5fb0;--acc-3:#b23bd6;--acc-mid:#7a1a5a;--acc-deep:#3d0f30;--acc-dark:#b81878;--bar-lt:#5a2150;--bar-md:#3a1233;--bar-dk:#250b22;}
+    [data-accent="red"]{--acc:#e0322f;--acc-lt:#ff6a5e;--acc-3:#e0602f;--acc-mid:#7a1f1c;--acc-deep:#3d100e;--acc-dark:#c2241f;--bar-lt:#5a201d;--bar-md:#3a1311;--bar-dk:#250b0a;}
+    [data-accent="purple"]{--acc:#7c3aed;--acc-lt:#a86bff;--acc-3:#5b6bff;--acc-mid:#4a2585;--acc-deep:#291251;--acc-dark:#6a2fce;--bar-lt:#3a2566;--bar-md:#251447;--bar-dk:#170c2e;}
+    [data-accent="cyan"]{--acc:#0b8ea8;--acc-lt:#27c0d8;--acc-3:#1f9be0;--acc-mid:#0c5566;--acc-deep:#062f3a;--acc-dark:#0a7a90;--bar-lt:#114b59;--bar-md:#0b313b;--bar-dk:#061f26;}
     *{box-sizing:border-box;}
     html{scroll-behavior:smooth;}
     body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.55;transition:background .35s ease,color .35s ease;}
@@ -47,7 +57,7 @@
     /* ---------- Navbar ---------- */
     .nav{
       position:sticky;top:0;z-index:50;
-      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,0) 45%),linear-gradient(135deg,#2b3c72 0%,#18254f 48%,#0f1a3c 100%);
+      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,0) 45%),linear-gradient(135deg,var(--bar-lt) 0%,var(--bar-md) 48%,var(--bar-dk) 100%);
       box-shadow:0 2px 14px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.12);
       border-bottom:1px solid rgba(255,255,255,.06);
       display:flex;align-items:center;justify-content:space-between;
@@ -68,11 +78,11 @@
     .theme-toggle{
       width:46px;height:46px;flex:0 0 auto;border:none;cursor:pointer;border-radius:50%;
       display:flex !important;align-items:center;justify-content:center;font-size:1.3rem;padding:0 !important;
-      background:linear-gradient(135deg,#4f7ae6,#2f49d1,#6f53e6);background-size:220% 220%;
+      background:linear-gradient(135deg,var(--acc-lt),var(--acc),var(--acc-3));background-size:220% 220%;
       animation:themeShimmer 5s ease infinite;box-shadow:0 4px 16px rgba(47,73,209,.45);
       transition:transform .2s ease,box-shadow .2s ease;
     }
-    .theme-toggle:hover{transform:scale(1.1) rotate(10deg) !important;box-shadow:0 6px 20px rgba(47,73,209,.6);background:linear-gradient(135deg,#4f7ae6,#2f49d1,#6f53e6) !important;}
+    .theme-toggle:hover{transform:scale(1.1) rotate(10deg) !important;box-shadow:0 6px 20px rgba(47,73,209,.6);background:linear-gradient(135deg,var(--acc-lt),var(--acc),var(--acc-3)) !important;}
     .theme-toggle:active{transform:scale(.92) !important;}
     .theme-emoji{display:block;line-height:1;transition:transform .5s cubic-bezier(.34,1.56,.64,1);}
     .theme-emoji.spin{transform:rotate(360deg) scale(1.25);}
@@ -85,10 +95,26 @@
     .lang-toggle:active{transform:scale(.92);}
     /* install app button */
     .install-btn{border:none;cursor:pointer;font:inherit;font-weight:800;color:#fff;border-radius:999px;
-      padding:.5rem 1rem;background:linear-gradient(135deg,#4f7ae6,#2f49d1);box-shadow:0 4px 14px rgba(47,73,209,.4);
+      padding:.5rem 1rem;background:linear-gradient(135deg,var(--acc-lt),var(--acc));box-shadow:0 4px 14px rgba(47,73,209,.4);
       transition:transform .12s ease,box-shadow .2s ease;}
     .install-btn:hover{box-shadow:0 6px 18px rgba(47,73,209,.55);transform:translateY(-1px);}
     .install-btn:active{transform:scale(.93);}
+    /* accent color picker */
+    .accent-wrap{position:relative;display:flex;align-items:center;}
+    .accent-toggle{width:46px;height:46px;border:none;cursor:pointer;border-radius:50%;display:flex;align-items:center;justify-content:center;
+      background:conic-gradient(from 90deg,#2f49d1,#d61f8f,#e0322f,#7c3aed,#0b8ea8,#2f49d1);
+      box-shadow:0 4px 14px rgba(0,0,0,.32);transition:transform .15s ease;}
+    .accent-toggle span{width:27px;height:27px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;font-size:.95rem;}
+    .accent-toggle:hover{transform:scale(1.1) rotate(18deg);}
+    .accent-toggle:active{transform:scale(.92);}
+    .accent-menu{position:absolute;top:122%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:14px;
+      padding:.7rem;display:none;gap:.55rem;box-shadow:0 16px 38px rgba(0,0,0,.32);z-index:60;}
+    .accent-menu.open{display:flex;animation:catFade .2s ease;}
+    .swatch{width:30px;height:30px;border-radius:50%;border:2px solid rgba(255,255,255,.7);cursor:pointer;padding:0;
+      box-shadow:0 2px 6px rgba(0,0,0,.25);transition:transform .12s ease;}
+    .swatch:hover{transform:scale(1.18);}
+    .swatch.active{outline:2px solid var(--ink);outline-offset:2px;}
+    [dir="rtl"] .accent-menu{right:auto;left:0;}
     /* RTL tweaks for Arabic */
     [dir="rtl"] .subj-link:hover{transform:translateX(-4px);}
     [dir="rtl"] .ym-deco{right:auto;left:-6px;}
@@ -108,14 +134,14 @@
       box-shadow:0 8px 20px rgba(47,73,209,.28);
       transition:background .2s ease,transform .15s cubic-bezier(.34,1.56,.64,1),box-shadow .2s ease;
     }
-    .hero .cta:hover{background:#2538b8;transform:translateY(-2px);box-shadow:0 12px 26px rgba(47,73,209,.38);}
+    .hero .cta:hover{background:var(--acc-dark);transform:translateY(-2px);box-shadow:0 12px 26px rgba(47,73,209,.38);}
     .hero .cta:active{transform:translateY(0) scale(.95);}
     .hero .art{display:flex;justify-content:center;align-items:center;}
     .photo-wrap{position:relative;width:100%;max-width:420px;}
     /* tilted gradient card peeking out behind the photo */
     .photo-wrap::before{
       content:"";position:absolute;inset:-16px;z-index:0;
-      background:linear-gradient(150deg,#4f7ae6,#2f49d1);
+      background:linear-gradient(150deg,var(--acc-lt),var(--acc));
       border-radius:48px 38px 56px 40px;transform:rotate(-5deg);opacity:.9;
       box-shadow:0 24px 50px rgba(27,37,89,.30);
     }
@@ -123,7 +149,7 @@
     .photo-wrap::after{
       content:"";position:absolute;top:-26px;right:-14px;z-index:2;
       width:62px;height:62px;border-radius:50%;
-      background:radial-gradient(circle at 35% 30%,#bcd0ff,#4f7ae6);
+      background:radial-gradient(circle at 35% 30%,#bcd0ff,var(--acc-lt));
       box-shadow:0 8px 18px rgba(47,73,209,.4);
     }
     .hero .art .photo{
@@ -156,8 +182,8 @@
     .year-card:active{transform:translateY(-2px) scale(.99);transition-duration:.08s;}
     .year-card .open{transition:background .2s ease,transform .2s ease;}
     .year-card:hover .open{transform:translateX(4px);}
-    .year-card.dark{background:linear-gradient(150deg,#2c3b91 0%,#1b2559 100%);}
-    .year-card.mid{background:linear-gradient(150deg,#4f7ae6 0%,#2f49d1 100%);}
+    .year-card.dark{background:linear-gradient(150deg,var(--acc-mid) 0%,var(--acc-deep) 100%);}
+    .year-card.mid{background:linear-gradient(150deg,var(--acc-lt) 0%,var(--acc) 100%);}
     .year-card .yr-no{
       width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.16);
       display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.2rem;margin-bottom:1rem;
@@ -201,7 +227,7 @@
     .btn:hover{background:var(--soft);transform:translateY(-1px);}
     .btn:active{transform:scale(.93);}
     .btn.primary{background:var(--blue);color:#fff;border-color:var(--blue);}
-    .btn.primary:hover{background:#2538b8;box-shadow:0 6px 16px rgba(47,73,209,.35);}
+    .btn.primary:hover{background:var(--acc-dark);box-shadow:0 6px 16px rgba(47,73,209,.35);}
     .muted-row{color:var(--muted);font-size:.9rem;padding:.6rem 0;}
 
     .empty{text-align:center;color:var(--muted);background:var(--surface);border:1px dashed var(--border);border-radius:16px;padding:3rem 1.5rem;}
@@ -222,8 +248,8 @@
     }
     @keyframes ymPop{from{opacity:0;transform:translateY(40px) scale(.94)}to{opacity:1;transform:none}}
     .ym-header{position:relative;color:#fff;padding:1.7rem 1.7rem 1.6rem;display:flex;align-items:center;gap:1rem;overflow:hidden;}
-    .ym-header.dark{background:linear-gradient(150deg,#2c3b91,#1b2559);}
-    .ym-header.mid{background:linear-gradient(150deg,#4f7ae6,#2f49d1);}
+    .ym-header.dark{background:linear-gradient(150deg,var(--acc-mid),var(--acc-deep));}
+    .ym-header.mid{background:linear-gradient(150deg,var(--acc-lt),var(--acc));}
     .ym-header::before{content:"";position:absolute;inset:-50%;z-index:0;
       background:radial-gradient(circle at 28% 30%,rgba(255,255,255,.28),transparent 42%),
                  radial-gradient(circle at 78% 65%,rgba(124,140,255,.4),transparent 46%);
@@ -257,7 +283,7 @@
     .cat-tab .tx small{color:var(--muted);font-size:.78rem;}
     .cat-tab:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 6px 16px rgba(47,73,209,.15);}
     .cat-tab:active{transform:scale(.96);}
-    .cat-tab.active{background:linear-gradient(135deg,#4f7ae6,#2f49d1);color:#fff;border-color:transparent;box-shadow:0 8px 20px rgba(47,73,209,.32);}
+    .cat-tab.active{background:linear-gradient(135deg,var(--acc-lt),var(--acc));color:#fff;border-color:transparent;box-shadow:0 8px 20px rgba(47,73,209,.32);}
     .cat-tab.active small{color:rgba(255,255,255,.85);}
     .cat-panel{animation:catFade .32s ease;}
     @keyframes catFade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
@@ -292,7 +318,7 @@
     .social.disabled{opacity:.45;}
 
     footer{border-top:none;text-align:center;font-size:.9rem;padding:2.2rem 1.6rem;color:#dfe6ff;
-      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,0) 45%),linear-gradient(135deg,#2b3c72 0%,#18254f 48%,#0f1a3c 100%);
+      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,0) 45%),linear-gradient(135deg,var(--bar-lt) 0%,var(--bar-md) 48%,var(--bar-dk) 100%);
       box-shadow:inset 0 1px 0 rgba(255,255,255,.12);}
     .site-footer{display:flex;align-items:center;justify-content:center;gap:1.8rem;flex-wrap:wrap;}
     .footer-logo{height:74px;width:auto;}
@@ -333,7 +359,7 @@
     <button class="brand" onclick="goHome()" aria-label="Home">
       <svg class="logo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#4f7ae6"/><stop offset="1" stop-color="#2f49d1"/>
+          <stop offset="0" stop-color="var(--acc-lt)"/><stop offset="1" stop-color="var(--acc)"/>
         </linearGradient></defs>
         <ellipse cx="32" cy="29" rx="29" ry="12" transform="rotate(-22 32 29)" fill="none" stroke="#9cb6ff" stroke-width="2.4"/>
         <path d="M32 11c-6 0-9 3-13 3S12 12 9 16c-3 5 0 14 3 22 2 6 2 12 6 12 3 0 3-7 5-12 1-3 2-5 4-5s3 2 4 5c2 5 2 12 5 12 4 0 4-6 6-12 3-8 6-17 3-22-3-4-7-2-11-2S38 11 32 11z" fill="url(#lg)"/>
@@ -342,6 +368,16 @@
     </button>
     <div class="links">
       <button class="theme-toggle" id="themeBtn" onclick="cycleTheme()" title="Switch theme" aria-label="Switch theme"><span class="theme-emoji" id="themeEmoji">☀️</span></button>
+      <div class="accent-wrap">
+        <button class="accent-toggle" id="accentBtn" onclick="toggleAccentMenu(event)" title="Page color" aria-label="Page color"><span>🎨</span></button>
+        <div class="accent-menu" id="accentMenu">
+          <button class="swatch" style="background:#2f49d1" onclick="setAccent('blue')" title="Blue" aria-label="Blue"></button>
+          <button class="swatch" style="background:#d61f8f" onclick="setAccent('pink')" title="Pink" aria-label="Pink"></button>
+          <button class="swatch" style="background:#e0322f" onclick="setAccent('red')" title="Red" aria-label="Red"></button>
+          <button class="swatch" style="background:#7c3aed" onclick="setAccent('purple')" title="Purple" aria-label="Purple"></button>
+          <button class="swatch" style="background:#0b8ea8" onclick="setAccent('cyan')" title="Cyan" aria-label="Cyan"></button>
+        </div>
+      </div>
       <button class="lang-toggle" id="langBtn" onclick="toggleLang()" title="Change language" aria-label="Change language"><span id="langText">🌐 ع</span></button>
       <button class="install-btn" id="installBtn" onclick="installApp()" data-i18n="nav_install" style="display:none">⬇ Install</button>
       <button onclick="goHome()" data-i18n="nav_home">Home</button>
@@ -365,7 +401,7 @@
         <div class="blob" id="artFallback" style="display:none;">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs><linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#4f7ae6"/><stop offset="1" stop-color="#2f49d1"/>
+              <stop offset="0" stop-color="var(--acc-lt)"/><stop offset="1" stop-color="var(--acc)"/>
             </linearGradient></defs>
             <ellipse cx="32" cy="29" rx="29" ry="12" transform="rotate(-22 32 29)" fill="none" stroke="#ffffff" stroke-width="2.4" opacity=".8"/>
             <path d="M32 11c-6 0-9 3-13 3S12 12 9 16c-3 5 0 14 3 22 2 6 2 12 6 12 3 0 3-7 5-12 1-3 2-5 4-5s3 2 4 5c2 5 2 12 5 12 4 0 4-6 6-12 3-8 6-17 3-22-3-4-7-2-11-2S38 11 32 11z" fill="url(#lg2)"/>
@@ -504,6 +540,23 @@
       setLang(saved);
     })();
 
+    /* ---------- Accent color picker (Blue/Pink/Red/Purple/Cyan) ---------- */
+    const ACC_IDS=["blue","pink","red","purple","cyan"];
+    function setAccent(id){
+      if(!ACC_IDS.includes(id))id="blue";
+      document.documentElement.setAttribute("data-accent",id);
+      try{localStorage.setItem("cod-accent",id);}catch(e){}
+      document.querySelectorAll("#accentMenu .swatch").forEach((s,i)=>s.classList.toggle("active",ACC_IDS[i]===id));
+      const m=document.getElementById("accentMenu"); if(m)m.classList.remove("open");
+    }
+    function toggleAccentMenu(e){if(e)e.stopPropagation();document.getElementById("accentMenu").classList.toggle("open");}
+    document.addEventListener("click",e=>{const m=document.getElementById("accentMenu");if(m&&!e.target.closest(".accent-wrap"))m.classList.remove("open");});
+    (function(){
+      let a="blue";
+      try{a=localStorage.getItem("cod-accent")||"blue";}catch(e){}
+      setAccent(a);
+    })();
+
     /* =========================================================
        EDIT YOUR SOCIAL MEDIA LINKS HERE
        Put your full URL between the quotes. Leave "" to hide one.
@@ -519,7 +572,7 @@
       telegram:'<svg viewBox="0 0 24 24" fill="#229ed9"><path d="M21.9 4.3l-3.3 15.5c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.2-8.3c.4-.4-.1-.6-.6-.2L6.2 13.1l-4.9-1.5c-1.1-.3-1.1-1 .2-1.5l19.2-7.4c.9-.3 1.7.2 1.4 1.6z"/></svg>',
       whatsapp:'<svg viewBox="0 0 24 24" fill="#25d366"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.3 0-.5s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 2 .8 2.7.9 3.7.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15l-1.4 5 5.1-1.3A10 10 0 1012 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 1112 20.2z"/></svg>',
       youtube:'<svg viewBox="0 0 24 24" fill="#ff0000"><path d="M23 7.5a3 3 0 00-2.1-2.1C19 4.9 12 4.9 12 4.9s-7 0-8.9.5A3 3 0 001 7.5C.5 9.4.5 12 .5 12s0 2.6.5 4.5a3 3 0 002.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 002.1-2.1c.5-1.9.5-4.5.5-4.5s0-2.6-.5-4.5zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"/></svg>',
-      email:'<svg viewBox="0 0 24 24" fill="#2f49d1"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4.2l-8 5-8-5V6l8 5 8-5v2.2z"/></svg>'
+      email:'<svg viewBox="0 0 24 24" fill="var(--acc)"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4.2l-8 5-8-5V6l8 5 8-5v2.2z"/></svg>'
     };
     const LABELS = {facebook:"Facebook",instagram:"Instagram",telegram:"Telegram",whatsapp:"WhatsApp",youtube:"YouTube",email:"Email"};
 
