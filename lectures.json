@@ -331,7 +331,104 @@
               "folder": "crown and bridge",
               "number": null,
               "title": "crown and bridge",
-              "files": []
+              "files": [
+                {
+                  "file": "1 introduction.pdf",
+                  "path": "3 - Third Year/Lecture/crown and bridge/1 introduction.pdf",
+                  "number": 1,
+                  "title": "1 introduction",
+                  "size": 1411538,
+                  "date": "2026-06-05"
+                },
+                {
+                  "file": "2 indications, types and steps.pdf",
+                  "path": "3 - Third Year/Lecture/crown and bridge/2 indications, types and steps.pdf",
+                  "number": 2,
+                  "title": "2 indications, types and steps",
+                  "size": 1893298,
+                  "date": "2026-06-05"
+                },
+                {
+                  "file": "Lec 3 finishing lines.pdf",
+                  "path": "3 - Third Year/Lecture/crown and bridge/Lec 3 finishing lines.pdf",
+                  "number": 3,
+                  "title": "Lec 3 finishing lines",
+                  "size": 1169027,
+                  "date": "2026-06-05"
+                },
+                {
+                  "file": "Lec 4 .pdf",
+                  "path": "3 - Third Year/Lecture/crown and bridge/Lec 4 .pdf",
+                  "number": 4,
+                  "title": "Lec 4",
+                  "size": 1695124,
+                  "date": "2026-06-05"
+                },
+                {
+                  "file": "Lec 5 Crown and bridge.pdf",
+                  "path": "3 - Third Year/Lecture/crown and bridge/Lec 5 Crown and bridge.pdf",
+                  "number": 5,
+                  "title": "Lec 5 Crown and bridge",
+                  "size": 1074196,
+                  "date": "2026-06-05"
+                },
+                {
+                  "file": "Lec 6 Crown and Bridge.pdf",
+                  "path": "3 - Third Year/Lecture/crown and bridge/Lec 6 Crown and Bridge.pdf",
+                  "number": 6,
+                  "title": "Lec 6 Crown and Bridge",
+                  "size": 1495289,
+                  "date": "2026-06-05"
+                },
+                {
+                  "file": "Lec 7 Crown and bridge.pdf",
+                  "path": "3 - Third Year/Lecture/crown and bridge/Lec 7 Crown and bridge.pdf",
+                  "number": 7,
+                  "title": "Lec 7 Crown and bridge",
+                  "size": 1724225,
+                  "date": "2026-06-05"
+                },
+                {
+                  "file": "Lec 8 Crown and Bridge .pdf",
+                  "path": "3 - Third Year/Lecture/crown and bridge/Lec 8 Crown and Bridge .pdf",
+                  "number": 8,
+                  "title": "Lec 8 Crown and Bridge",
+                  "size": 937927,
+                  "date": "2026-06-05"
+                },
+                {
+                  "file": "Lec 9.pdf",
+                  "path": "3 - Third Year/Lecture/crown and bridge/Lec 9.pdf",
+                  "number": 9,
+                  "title": "Lec 9",
+                  "size": 1400516,
+                  "date": "2026-06-05"
+                },
+                {
+                  "file": "lecture 12 Crown.pdf",
+                  "path": "3 - Third Year/Lecture/crown and bridge/lecture 12 Crown.pdf",
+                  "number": 12,
+                  "title": "lecture 12 Crown",
+                  "size": 2156604,
+                  "date": "2026-06-05"
+                },
+                {
+                  "file": "Lec 13 crown and bridge .pdf",
+                  "path": "3 - Third Year/Lecture/crown and bridge/Lec 13 crown and bridge .pdf",
+                  "number": 13,
+                  "title": "Lec 13 crown and bridge",
+                  "size": 8076536,
+                  "date": "2026-06-05"
+                },
+                {
+                  "file": "Lec 18 ( Crown and bridge ).pdf",
+                  "path": "3 - Third Year/Lecture/crown and bridge/Lec 18 ( Crown and bridge ).pdf",
+                  "number": 18,
+                  "title": "Lec 18 ( Crown and bridge )",
+                  "size": 1716335,
+                  "date": "2026-06-05"
+                }
+              ]
             },
             {
               "folder": "ethics",
@@ -613,7 +710,7 @@
                   "number": 1,
                   "title": "Lec 1&2 250922 225731",
                   "size": 364386,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "2_5467776556476697247.pdf",
@@ -621,7 +718,7 @@
                   "number": 2,
                   "title": "2 5467776556476697247",
                   "size": 712035,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "Lec 3 &4_250922_225800.pdf",
@@ -629,7 +726,7 @@
                   "number": 3,
                   "title": "Lec 3 &4 250922 225800",
                   "size": 521303,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "lec5 & 6_251006_120230.pdf",
@@ -637,7 +734,7 @@
                   "number": 5,
                   "title": "lec5 & 6 251006 120230",
                   "size": 2242429,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "Lec 7& 8_251016_104604.pdf",
@@ -645,7 +742,7 @@
                   "number": 7,
                   "title": "Lec 7& 8 251016 104604",
                   "size": 472059,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "lec 10 CLII amalgam.pdf",
@@ -653,7 +750,7 @@
                   "number": 10,
                   "title": "lec 10 CLII amalgam",
                   "size": 627617,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "lecture 13 and 14.pdf",
@@ -661,7 +758,7 @@
                   "number": 13,
                   "title": "lecture 13 and 14",
                   "size": 365605,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "15 & 16.pdf",
@@ -669,7 +766,7 @@
                   "number": 15,
                   "title": "15 & 16",
                   "size": 580300,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "Lec 17 Operative.pdf",
@@ -677,7 +774,7 @@
                   "number": 17,
                   "title": "Lec 17 Operative",
                   "size": 8750519,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "18.pdf",
@@ -685,7 +782,7 @@
                   "number": 18,
                   "title": "18",
                   "size": 951382,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "19 & 20.pdf",
@@ -693,7 +790,7 @@
                   "number": 19,
                   "title": "19 & 20",
                   "size": 15664450,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "21 & 22 .pdf",
@@ -701,7 +798,7 @@
                   "number": 21,
                   "title": "21 & 22",
                   "size": 496835,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "Lec.pdf",
@@ -709,7 +806,7 @@
                   "number": null,
                   "title": "Lec",
                   "size": 333378,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "Pulp protection.pdf",
@@ -717,7 +814,7 @@
                   "number": null,
                   "title": "Pulp protection",
                   "size": 298407,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 }
               ]
             },
@@ -986,7 +1083,7 @@
                   "number": 1,
                   "title": "lecture 1 3rd.docx (1)",
                   "size": 4958083,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "lecture 2 3rd.docx (3).pdf",
@@ -994,7 +1091,7 @@
                   "number": 2,
                   "title": "lecture 2 3rd.docx (3)",
                   "size": 3214794,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "lecture 3 3rd.docx (1).pdf",
@@ -1002,7 +1099,7 @@
                   "number": 3,
                   "title": "lecture 3 3rd.docx (1)",
                   "size": 4620431,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "lecture 4 26-25 3rd.docx.pdf",
@@ -1010,7 +1107,7 @@
                   "number": 4,
                   "title": "lecture 4 26-25 3rd.docx",
                   "size": 4113025,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "lecture 5 24-25.pdf",
@@ -1018,7 +1115,7 @@
                   "number": 5,
                   "title": "lecture 5 24-25",
                   "size": 3258165,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "Lecture 6 26-25 3rd.docx.pdf",
@@ -1026,7 +1123,7 @@
                   "number": 6,
                   "title": "Lecture 6 26-25 3rd.docx",
                   "size": 12099749,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "lecture 7 24-25 3rd.docx (2).pdf",
@@ -1034,7 +1131,7 @@
                   "number": 7,
                   "title": "lecture 7 24-25 3rd.docx (2)",
                   "size": 8317029,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "Lecture 8.pdf",
@@ -1042,7 +1139,7 @@
                   "number": 8,
                   "title": "Lecture 8",
                   "size": 1808853,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "lecture 9 3rd.docx.pdf",
@@ -1050,7 +1147,7 @@
                   "number": 9,
                   "title": "lecture 9 3rd.docx",
                   "size": 5524955,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "lecture 10.pdf",
@@ -1058,7 +1155,7 @@
                   "number": 10,
                   "title": "lecture 10",
                   "size": 3537325,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "lecture 11 merged.pdf",
@@ -1066,7 +1163,7 @@
                   "number": 11,
                   "title": "lecture 11 merged",
                   "size": 5730372,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "lecture 12 3rd (1)_merged.pdf",
@@ -1074,7 +1171,7 @@
                   "number": 12,
                   "title": "lecture 12 3rd (1) merged",
                   "size": 4261188,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "lecture 13 3rd.docx.pdf",
@@ -1082,7 +1179,7 @@
                   "number": 13,
                   "title": "lecture 13 3rd.docx",
                   "size": 3269879,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "lecture 14 3rd.docx.pdf",
@@ -1090,7 +1187,7 @@
                   "number": 14,
                   "title": "lecture 14 3rd.docx",
                   "size": 3702231,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "lecture 15.pdf",
@@ -1098,7 +1195,7 @@
                   "number": 15,
                   "title": "lecture 15",
                   "size": 831960,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 }
               ]
             },
@@ -1113,7 +1210,7 @@
                   "number": 1,
                   "title": "Radiography lec 1",
                   "size": 1844852,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "Lec 2 radiology.pdf",
@@ -1121,7 +1218,7 @@
                   "number": 2,
                   "title": "Lec 2 radiology",
                   "size": 348819,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "Lec 3 Radiology.pdf",
@@ -1129,7 +1226,7 @@
                   "number": 3,
                   "title": "Lec 3 Radiology",
                   "size": 532378,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "Lec 4 Radiology .pdf",
@@ -1137,7 +1234,7 @@
                   "number": 4,
                   "title": "Lec 4 Radiology",
                   "size": 578467,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "Lec 5 Radiology.pdf",
@@ -1145,7 +1242,7 @@
                   "number": 5,
                   "title": "Lec 5 Radiology",
                   "size": 722975,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "6 intra oral .pdf",
@@ -1153,7 +1250,7 @@
                   "number": 6,
                   "title": "6 intra oral",
                   "size": 1874151,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "Lec 7 Radiology .pdf",
@@ -1161,7 +1258,7 @@
                   "number": 7,
                   "title": "Lec 7 Radiology",
                   "size": 1036476,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "Lec 8 Radiology.pdf",
@@ -1169,7 +1266,7 @@
                   "number": 8,
                   "title": "Lec 8 Radiology",
                   "size": 1906105,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "Lec 9 Radiology.pdf",
@@ -1177,7 +1274,7 @@
                   "number": 9,
                   "title": "Lec 9 Radiology",
                   "size": 269990,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "MRI & US radiology.pdf",
@@ -1185,7 +1282,7 @@
                   "number": null,
                   "title": "MRI & US radiology",
                   "size": 1333854,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "MRI radiology.pdf",
@@ -1193,7 +1290,7 @@
                   "number": null,
                   "title": "MRI radiology",
                   "size": 164118,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "normal anatomy.pdf",
@@ -1201,7 +1298,7 @@
                   "number": null,
                   "title": "normal anatomy",
                   "size": 107830,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "Panoramic radiograph .pdf",
@@ -1209,7 +1306,7 @@
                   "number": null,
                   "title": "Panoramic radiograph",
                   "size": 6340273,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "Patient management.pdf",
@@ -1217,7 +1314,7 @@
                   "number": null,
                   "title": "Patient management",
                   "size": 2051266,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "Radiology ( CT & CBCT ).pdf",
@@ -1225,7 +1322,7 @@
                   "number": null,
                   "title": "Radiology ( CT & CBCT )",
                   "size": 745858,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "Radiology ( Extraoral ).pdf",
@@ -1233,7 +1330,7 @@
                   "number": null,
                   "title": "Radiology ( Extraoral )",
                   "size": 992728,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 },
                 {
                   "file": "Radiology( CBCT ).pdf",
@@ -1241,7 +1338,7 @@
                   "number": null,
                   "title": "Radiology( CBCT )",
                   "size": 76384,
-                  "date": "2026-05-31"
+                  "date": "2026-05-30"
                 }
               ]
             }
